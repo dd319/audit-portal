@@ -113,11 +113,7 @@ const Landing = () => {
                 final_error_category: item.finalErrorCategory,
                 remarks: item.remarks,
                 remarks_for_operations: item.remarks_for_operations,
-                // files: item.fil ? Array.from(item.file).map(file => ({
-                //     name: file.name,
-                //     size: file.size,
-                //     type: file.type
-                // })) : [], 
+ 
                 files: item.file.map(f => ({
                     file: f.file
                 })),
