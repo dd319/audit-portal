@@ -1,0 +1,55 @@
+/* body {
+  margin: 0;
+  font-family: 'Montserrat' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.MuiInputBase-root {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  padding: 4px 8px;
+} */
+
+
+body {
+  margin: 0;
+  font-family: 'Montserrat' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Montserrat' !important;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.MuiInputBase-root {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
