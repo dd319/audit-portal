@@ -113,11 +113,14 @@ const Landing = () => {
                 final_error_category: item.finalErrorCategory,
                 remarks: item.remarks,
                 remarks_for_operations: item.remarks_for_operations,
-                files: item.fil ? Array.from(item.file).map(file => ({
-                    name: file.name,
-                    size: file.size,
-                    type: file.type
-                })) : [], 
+                // files: item.fil ? Array.from(item.file).map(file => ({
+                //     name: file.name,
+                //     size: file.size,
+                //     type: file.type
+                // })) : [], 
+                files: item.file.map(f => ({
+                    file: f.file
+                })),
                 counter1: check_counter_for_errorcase_string
             })),
 
@@ -276,28 +279,7 @@ const Landing = () => {
         }
     };
    
-    // const handleFileInputChangeWithError = async (index, files) => {
-    //     const updatedComponents = [...componentsWithError];
-        
-    //     // Convert files to an array if not already
-    //     const filesArray = Array.from(files);
-        
-    //     // Convert files to base64
-    //     const base64Files = await Promise.all(filesArray.map(file => convertToBase64(file)));
-        
-    //     updatedComponents[index]['file'] = base64Files;
-        
-    //     setComponentsWithError(updatedComponents);
-    // };
-
-    // const convertToBase64 = (file) => {
-    //     return new Promise((resolve, reject) => {
-    //         const reader = new FileReader();
-    //         reader.readAsDataURL(file);
-    //         reader.onload = () => resolve(reader.result);
-    //         reader.onerror = error => reject(error);
-    //     });
-    // };
+    
     const handleFileInputChangeWithError = async (index, files) => {
         const updatedComponents = [...componentsWithError];
         
@@ -380,25 +362,31 @@ const Landing = () => {
         setAddNewItem(updatedItems);
     };
 
-    // const handleFileChange = (index, file) => {
-    //     const updatedItems = addNewItem.map((item, i) =>
-    //         i === index ? { ...item, file } : item
-    //     );
-    //     setAddNewItem(updatedItems);
-    // };
+//////////////////////////////////
+const handleFileChange = async (index, files) => {
+    const updatedComponents = [...addNewItem];
+    
+    // Convert files to an array if not already
+    const filesArray = Array.from(files);
+    
+    // Convert files to base64 and store as objects
+    const base64Files = await Promise.all(filesArray.map(async file => ({
+        file: await convertToBase64forcaseerror(file)
+    })));
+    
+    updatedComponents[index]['file'] = base64Files;
+    
+    setAddNewItem(updatedComponents);
+};
 
-
-
-    const handleFileChange = (index, file) => {
-        const updatedComponents = [...addNewItem];
-        
-        
-        updatedComponents[index]['file'] = file;
-        
-        
-        setAddNewItem(updatedComponents);
-    };
-
+const convertToBase64forcaseerror = (file) => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+};
 
     const handleRemoveNewItem = (index) => {
         setcountforerrorcase(count_for_errorcase - 1);
