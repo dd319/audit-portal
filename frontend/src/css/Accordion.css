@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+.headtitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.headtitle span {
+  font-size: 1.5rem;
+  color: #007BFF;
+}
+
+.headtitle h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.searchBar input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.searchBar button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchBar button:hover {
+  background-color: #0056b3;
+}
+
+.accordion-sect {
+  margin-bottom: 10px;
+}
+
+.accordion {
+  background-color: #a1c9f5;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion.active, .accordion:hover {
+  background-color: #80aad6;
+}
+
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.data strong {
+  margin-right: 5px;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  border: 1px solid #ddd;
+  border-radius: 0 0 4px 4px;
+}
+
+.accordion.active + .panel {
+  max-height: 800px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.table th, .table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.upper {
+  text-align: left;
+  margin: 10px 0;
+}
+
+.remark {
+  white-space: pre-wrap;
+}
+
+.reverse p {
+  text-align: center;
+}
+
+.expand-icon {
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion.active .expand-icon {
+  transform: rotate(180deg);
+  
+}
+
+.accordion-summary:hover .expand-icon {
+  color: #0056b3;
+}
+
+
+
+.pagination a:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+.css-2tvkd7-MuiButtonBase-root-MuiButton-root:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: rgba(255, 64, 129, 0.04);
+  border: 0px !important;
+}
+.accordion:hover {
+  background-color: #dbdfe3 !important;
+}
+.wrapper {
+  padding: 0px !important;
+  margin: 40px !important;
+}
+.css-1faxodo-MuiPaper-root {
+
+  margin-bottom: 31px !important;
+ 
+}
+.accordion.active {
+  background-color: #fff !important;
+}

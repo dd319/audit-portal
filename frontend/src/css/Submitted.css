@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+.wrapper {
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  /* background: linear-gradient(to right, #f7f8fc, #ffe0e0); */
+  animation: fadeIn 1s ease-in;
+}
+
+.headtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: slideInDown 0.5s ease-out;
+}
+
+.headtitle h1 {
+  font-size: 2.5em;
+  color: #007BFF;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.admin-search,
+.admin-search2 {
+  width: 200px;
+}
+
+.admin-searchBtn,
+.admin-clearBtn,
+.admin-showAllBtn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.admin-searchBtn:hover,
+.admin-clearBtn:hover,
+.admin-showAllBtn:hover {
+  box-shadow: 0 4px 8px rgba(124, 77, 255, 0.2);
+}
+
+.underline {
+  width: 100%;
+  height: 4px;
+  background-color: #007BFF;
+  margin: 10px 0;
+  animation: expand 0.5s ease-out;
+}
+
+.reverse {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeInUp 0.7s ease-in;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.pagination .active a {
+  background-color: #007BFF;
+  color: white;
+  border: 1px solid #007BFF;
+}
+
+.pagination a {
+  color: #007BFF;
+  border: 1px solid #007BFF;
+  padding: 8px 16px;
+  margin: 0 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #007BFF;
+}
+
+
+
+
+ul{
+  list-style-type: none;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.searchBar input {
+  padding: 10px 16px !important;
+  border: 0px !important;
+  border-radius: 4px;
+}
+
+.css-1laqsz7-MuiInputAdornment-root {
+
+  padding: 0px 10px !important;
+ 
+}
+
+.searchBar button {
+ 
+  margin-top: 2px !important;
+ 
+  padding: 8px 20px !important;
+  
+}
+
+
+.pagination a:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+.css-2tvkd7-MuiButtonBase-root-MuiButton-root:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: rgba(255, 64, 129, 0.04);
+  border: 0px !important;
+}
+.accordion:hover {
+  background-color: #dbdfe3 !important;
+}
+.wrapper {
+  padding: 0px !important;
+  margin: 0px 80px !important;
+}
+.css-1faxodo-MuiPaper-root {
+
+  margin-bottom: 31px !important;
+ 
+}
+.accordion.active{
+  background-color: #fff !important;
+}

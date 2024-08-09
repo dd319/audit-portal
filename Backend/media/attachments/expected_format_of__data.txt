@@ -1,0 +1,58 @@
+const formData = {
+            inp: 'first barcodeeee',
+            audit: 'auditType1',
+            caseError: 'yes',
+            caseStatus: 'status1',
+	    status: 'submitted'
+	    Errorcase: [
+                {
+                    audit: 'selectCategory2',
+                    errorDefinition: 'ErrorDefinition2',
+                    finalErrorCategory: 'FinalErrorCategory2',
+                    remarks: 'new item remark',
+                    remarks_for_operations: 'new item remarks for operation',
+                },
+                {
+                    audit: 'selectCategory1',
+                    errorDefinition: 'ErrorDefinition1',
+                    finalErrorCategory: 'FinalErrorCategory1',
+                    remarks: 'ssssssssssssssssssssssss',
+                    remarks_for_operations: 'ssssssssssssssssssssssssssssssssssssssssssss',
+                },
+            ],
+            componentsWithError: [
+                {
+                    inp: 'bar code for cwe',
+                    audit: 'status1',
+                    caseError: 'error1',
+                    caseStatus: 'status1',
+                    remarks: 'bar code for cwe remark',
+                    remarks_for_operations: 'bar code for cwe remark for operation',
+                },
+                {
+                    inp: 'ssssssssssssssss',
+                    audit: 'status2',
+                    caseError: 'error1',
+                    caseStatus: 'status2',
+                    remarks: 'sssssssssssssssssssssssssssssqqq',
+                    remarks_for_operations: 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq',
+                },
+            ],
+            componentsWithoutError: [
+                {
+                    inp: 'bar code forcwit',
+                    audit: 'status3',
+                    caseStatus: 'status3',
+                    remarks: 'bar code forcwitthoute remark',
+                    remarks_for_operations: 'bar code forcwitthoute remark for operation',
+                },
+                {
+                    inp: 'qqqqqqqqqqqqqqqq',
+                    audit: 'status1',
+                    caseStatus: 'status1',
+                    remarks: 'qqqqqqqqqqqqqqqqqqq',
+                    remarks_for_operations: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                },
+            ],
+            
+        };
