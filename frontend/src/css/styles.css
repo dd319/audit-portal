@@ -1,0 +1,163 @@
+/* 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navigation Panel Styling */
+/* .MuiAppBar-root {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: background-color 0.3s;
+}
+
+.MuiAppBar-root:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent on hover */
+
+
+/* Drawer Menu Styling */
+/* .MuiDrawer-paper {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Search Bar Styling */
+/* .MuiInputBase-root {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+
+.MuiInputBase-root:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+} */
+
+/* Profile Menu Icons */
+/* .MuiListItemIcon-root {
+  min-width: 36px;
+} */
+
+/* Hover Effects for List Items */
+/* .MuiListItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+} */ 
+
+*, *::before, *::after {
+  text-transform: none !important;
+}
+* {
+  font-family: 'Montserrat' !important;
+}
+
+body {
+  margin: 0;
+ 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+ .MuiInputBase-root,
+.MuiTextField-root .MuiInputBase-root,
+.MuiSelect-root,
+.MuiTextarea-root,
+.MuiOutlinedInput-root,
+.MuiInput-root,
+.MuiInputLabel-root {
+  border-radius: 1 rem !important; /* Adjust the radius as needed */
+} 
+
+
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.MuiInputBase-root {
+  background-color: transparent !important;
+
+  padding:0px !important;
+}
+
+
+
+
+/* #add into styles.css */
+/* Navigation Panel Styling */
+.MuiAppBar-root {
+  backdrop-filter: blur(10px);
+  background-color: white !important;
+  transition: background-color 0.3s;
+}
+
+.MuiAppBar-root:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent on hover */
+}
+
+/* Drawer Menu Styling */
+.MuiDrawer-paper {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Search Bar Styling */
+.MuiInputBase-root {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.MuiInputBase-root:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Profile Menu Icons */
+.MuiListItemIcon-root {
+  min-width: 36px;
+}
+
+/* Hover Effects for List Items */
+.MuiListItem-root:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+textarea{
+  padding: 15px !important;
+}

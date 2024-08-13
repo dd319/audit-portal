@@ -1,0 +1,68 @@
+header {
+    position: relative;
+    width: 100%;
+    background-color: var(--header-background);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(243, 242, 242, 0.1);
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 1rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-actions .MuiIconButton-root {
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .header-actions .MuiIconButton-root:hover {
+    background-color: var(--icon-button-hover);
+    transform: scale(1.1);
+  }
+  
+  .MuiAvatar-root {
+    cursor: pointer;
+  }
+  
+  .MuiSwitch-root {
+    margin-left: 1rem;
+  }
+  
+  .MuiMenu-paper {
+    border-radius: 8px;
+  }
+  
+  .MuiMenuItem-root {
+    transition: background-color 0.3s ease;
+  }
+  
+  .MuiMenuItem-root:hover {
+    background-color: var(--menu-item-hover);
+  }
+  

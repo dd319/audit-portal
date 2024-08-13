@@ -1,0 +1,159 @@
+import React from 'react'
+import { useState,useEffect } from 'react';
+import CustomButton from '../CustomButton';
+import { FormControl, InputLabel, MenuItem, Select, Typography, TextField, Grid, Box, Paper, Snackbar, Alert } from '@mui/material';
+import {
+ 
+    cwithoute_check_status, cwithoute_change_status,} from './options';
+function Cwithoute({ onComponentsUpdate }) {
+
+ 
+    
+    const [componentsWithoutError, setComponentsWithoutError] = useState([]);
+    useEffect(() => {
+        if (onComponentsUpdate) {
+            onComponentsUpdate(componentsWithoutError);
+        }
+    }, [componentsWithoutError, onComponentsUpdate]);
+    const [fieldErrors, setFieldErrors] = useState([]);
+    const [count_for_cwithoute, setcountforcwithoute] = useState(0);
+    const [isRequiblack, setIsRequiblack] = useState(false);
+    
+    // Method to handle input changes for components without error
+    const handleInputChangeWithoutError = (index, field, value) => {
+        setComponentsWithoutError(prevComponents => {
+            const updatedComponents = [...prevComponents];
+            updatedComponents[index] = { ...updatedComponents[index], [field]: value };
+            return updatedComponents;
+        });
+    };
+
+    // Method to add a new component without error
+
+    const handleAddComponentWithoutError = () => {
+        setcountforcwithoute(count_for_cwithoute + 1);
+        setComponentsWithoutError(prevComponents => [
+            ...prevComponents,
+            {
+                barcode: '',
+                audit_type: '',
+                case_status: '',
+                remarks: '',
+                remarks_for_operations: ''
+            }
+        ]);
+    };
+
+
+    // Method to remove a component without error by index
+    const handleRemoveComponentWithoutError = (index) => {
+        setComponentsWithoutError(prevComponents =>
+            prevComponents.filter((_, i) => i !== index)
+        );
+        setcountforcwithoute(count_for_cwithoute - 1);
+    };
+
+    const validateSubBarcodeForCwithoutError = (sub_barcode, index) => {
+        // Combined regex for sub bar code and barcode
+        const subBarcodeRegex = /^([A-Z]\d{3}|[A-Z]{3}\d)-\d{2}\d{2}-\d{6,7}(-[A-Z]{2}\d{2})?$/;
+
+        // Check if barcode matches the combined pattern
+        const isValid = subBarcodeRegex.test(sub_barcode);
+        const updatedErrors = [...fieldErrors];
+        updatedErrors[index] = isValid ? '' : 'Invalid Subbarcode';
+        setFieldErrors(updatedErrors);
+    };
+  return (
+<>
+
+<Grid item xs={12} sx={{ marginTop: '20px' }}>
+
+{/* <h1>Counter For Cwithoute {count_for_cwithoute}</h1> */}
+<Typography variant='h4' gutterBottom sx={{ fontSize: '1.5rem' }}>
+    Components Without Error
+</Typography>
+<CustomButton onClick={handleAddComponentWithoutError}>
+    Add Item
+</CustomButton>
+{componentsWithoutError.map((component, index) => (
+    <Box key={index} sx={{ border: '1px solid #ccc', padding: '20px', margin: '20px 0', borderRadius: '8px', overflow: 'hidden' }}>
+        <Typography variant='h6' gutterBottom>Component Without Error {index + 1}</Typography>
+        <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <FormControl fullWidth>
+                    <TextField requiblack={isRequiblack}
+                        label="Enter Sub Bar Code"
+                        value={component.sub_barcode}
+                        onChange={(e) => {
+                            handleInputChangeWithoutError(index, 'sub_barcode', e.target.value.toUpperCase());
+                            validateSubBarcodeForCwithoutError(e.target.value, index);
+                        }}
+                        inputProps={{ minLength: 21, maxLength: 21 }}
+                        error={Boolean(fieldErrors[index])}
+                        helperText={fieldErrors[index]}
+                    />
+                </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                    <InputLabel>Check Status</InputLabel>
+                    <Select requiblack={isRequiblack}
+                        value={component.check_status || ''}
+                        onChange={(e) => handleInputChangeWithoutError(index, 'check_status', e.target.value)}
+                        label="Check Status"
+                    >
+                        {cwithoute_check_status.map((item, index) => (
+                            <MenuItem key={index} value={item.value}>{item.name}</MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                    <InputLabel>Change Status</InputLabel>
+                    <Select requiblack={isRequiblack}
+                        value={component.change_status || ''}
+                        onChange={(e) => handleInputChangeWithoutError(index, 'change_status', e.target.value)}
+                        label="Change Status"
+                    >
+                        {cwithoute_change_status.map((item, index) => (
+                            <MenuItem key={index} value={item.value}>{item.name}</MenuItem>))}
+                    </Select>
+                </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                    <TextField multiline
+                        rows={4}
+                        label='Remarks'
+                        variant='outlined'
+                        value={component.remarks}
+                        onChange={(e) => handleInputChangeWithoutError(index, 'remarks', e.target.value)}
+                    />
+                </FormControl>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+                <FormControl fullWidth>
+                    <TextField multiline
+                        rows={4}
+                        label='Remarks for Operations'
+                        variant='outlined'
+                        value={component.remarks_for_operations}
+                        onChange={(e) => handleInputChangeWithoutError(index, 'remarks_for_operations', e.target.value)}
+                    />
+                </FormControl>
+            </Grid>
+            <Grid item xs={12}>
+                <CustomButton onClick={() => handleRemoveComponentWithoutError(index)}>
+                    Remove Item
+                </CustomButton>
+            </Grid>
+        </Grid>
+    </Box>
+))}
+</Grid>
+</>
+  )
+}
+
+export default Cwithoute
